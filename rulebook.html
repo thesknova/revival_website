@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rule Book — Revival: The Great Commission</title>
+  <meta name="description" content="Read the official rule book for Revival: The Great Commission — the faith-centered card game." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .rulebook-hero {
+      padding: 120px 24px 56px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(42, 90, 58, 0.3) 0%, transparent 60%),
+        var(--green-dark);
+      position: relative;
+    }
+
+    .rulebook-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .rulebook-hero .section-eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .rulebook-hero .section-title {
+      margin-bottom: 16px;
+    }
+
+    .rulebook-hero__sub {
+      color: var(--cream-dim);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .rulebook-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .rulebook-viewer {
+      padding: 56px 24px 80px;
+      background: var(--green-dark);
+    }
+
+    .rulebook-viewer__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pdf-frame-wrap {
+      background: var(--green-card);
+      border: 1px solid var(--green-light);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 85vh;
+      min-height: 600px;
+      border: none;
+      display: block;
+    }
+
+    /* Fallback for mobile / browsers that block iframe PDFs */
+    .pdf-fallback {
+      display: none;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .pdf-fallback p {
+      color: var(--cream-dim);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .pdf-frame {
+        height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-revival">Revival</span>
+        <span class="nav__logo-sub">The Great Commission</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#how-to-play">How to Play</a></li>
+        <li><a href="/#whats-in-box">What's Inside</a></li>
+        <li><a href="/rulebook.html" style="color: var(--gold);">Rule Book</a></li>
+        <li><a href="/#buy" class="nav__cta">Buy Now</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="/#about" class="nav__mobile-link">About</a>
+      <a href="/#how-to-play" class="nav__mobile-link">How to Play</a>
+      <a href="/#whats-in-box" class="nav__mobile-link">What's Inside</a>
+      <a href="/rulebook.html" class="nav__mobile-link" style="color: var(--gold);">Rule Book</a>
+      <a href="/#buy" class="nav__mobile-link nav__mobile-cta">Buy Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="rulebook-hero">
+    <p class="section-eyebrow">Official Game Rules</p>
+    <h1 class="section-title">Rule Book</h1>
+    <p class="rulebook-hero__sub">Everything you need to Complete the Mission.</p>
+    <div class="rulebook-actions">
+      <a href="/rulebook.pdf" download="Revival-Rule-Book.pdf" class="btn btn--gold">
+        Download PDF
+      </a>
+      <a href="/#buy" class="btn btn--outline">Order the Game</a>
+    </div>
+  </div>
+
+  <!-- PDF VIEWER -->
+  <div class="rulebook-viewer">
+    <div class="rulebook-viewer__inner">
+      <div class="pdf-frame-wrap">
+        <iframe
+          class="pdf-frame"
+          src="/rulebook.pdf"
+          title="Revival: The Great Commission — Rule Book"
+          aria-label="Rule Book PDF viewer"
+        >
+          <!-- Fallback content if iframe PDF not supported -->
+          <div class="pdf-fallback">
+            <p>Your browser doesn't support inline PDF viewing.</p>
+            <a href="/rulebook.pdf" download="Revival-Rule-Book.pdf" class="btn btn--gold">
+              Download the Rule Book
+            </a>
+          </div>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="footer__logo">Revival</p>
+          <p class="footer__tagline">Guess the Word. Complete the Mission.</p>
+          <p class="footer__origin">Created in Medicine Hat, Alberta 🇨🇦</p>
+        </div>
+        <div class="footer__links">
+          <a href="/#about">About</a>
+          <a href="/#how-to-play">How to Play</a>
+          <a href="/#whats-in-box">What's Inside</a>
+          <a href="/rulebook.html">Rule Book</a>
+          <a href="/#buy">Shop</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://instagram.com/revival.thegame" target="_blank" rel="noopener" class="footer__social-link">
+            Instagram @revival.thegame
+          </a>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2026 Revival: The Great Commission. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  </script>
+</body>
+</html>
