@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Cancelled — Revival: The Great Commission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .status-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(42, 90, 58, 0.15) 0%, transparent 70%),
+        var(--green-dark);
+    }
+    .status-icon {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      display: block;
+      opacity: 0.6;
+    }
+    .status-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+    .status-subtitle {
+      font-size: 1.05rem;
+      color: var(--cream-dim);
+      margin-bottom: 12px;
+      max-width: 480px;
+    }
+    .status-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="status-page">
+    <span class="status-icon">◇</span>
+    <h1 class="status-title">No worries — Mission on Hold</h1>
+    <p class="status-subtitle">
+      Your order wasn't completed. Nothing was charged.
+    </p>
+    <p class="status-subtitle">
+      Whenever you're ready, we'd love to get Revival into your hands.
+    </p>
+    <div class="status-actions">
+      <a href="/#buy" class="btn btn--gold">Try Again</a>
+      <a href="/" class="btn btn--outline">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
