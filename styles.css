@@ -826,6 +826,39 @@ a {
   text-transform: uppercase;
 }
 
+.testimonials-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.testimonials-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.testimonials-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.testimonials-photo:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .testimonials-photos {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Buy ─────────────────────────────────────────────────── */
 
 .buy {
