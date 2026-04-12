@@ -28,6 +28,43 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
+// ── Nav: dropdown menu ──────────────────────────────────────
+const dropdownToggle = document.querySelector('.nav__dropdown-toggle');
+const dropdownMenu = document.querySelector('.nav__dropdown-menu');
+
+if (dropdownToggle && dropdownMenu) {
+  dropdownToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = dropdownMenu.classList.contains('open');
+    dropdownMenu.classList.toggle('open');
+    dropdownToggle.setAttribute('aria-expanded', !isOpen);
+  });
+
+  // Close when clicking a menu item
+  dropdownMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdownMenu.classList.remove('open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close when clicking anywhere outside
+  document.addEventListener('click', (e) => {
+    if (!dropdownToggle.closest('.nav__dropdown').contains(e.target)) {
+      dropdownMenu.classList.remove('open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdownMenu.classList.remove('open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 // ── Stripe Checkout ─────────────────────────────────────────
 const checkoutBtn = document.getElementById('checkoutBtn');
 

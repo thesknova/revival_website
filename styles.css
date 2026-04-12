@@ -255,6 +255,103 @@ a {
   color: var(--gold) !important;
 }
 
+.nav__mobile-section {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin: 4px 0 0;
+}
+
+.nav__mobile-sub {
+  padding-left: 16px;
+  font-size: 0.95rem !important;
+  color: var(--cream-dim) !important;
+}
+
+.nav__mobile-sub:hover {
+  color: var(--gold) !important;
+}
+
+/* ── Nav Dropdown ─────────────────────────────────────────── */
+
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color var(--transition);
+}
+
+.nav__dropdown-toggle:hover,
+.nav__dropdown-toggle[aria-expanded="true"] {
+  color: var(--gold);
+}
+
+.nav__dropdown-arrow {
+  font-size: 0.55rem;
+  transition: transform var(--transition);
+  display: inline-block;
+}
+
+.nav__dropdown-toggle[aria-expanded="true"] .nav__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav__dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 36, 23, 0.98);
+  border: 1px solid var(--green-light);
+  border-radius: var(--radius);
+  padding: 8px 0;
+  min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  z-index: 200;
+}
+
+.nav__dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav__dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav__dropdown-menu li a:hover {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
+}
+
 /* ── Hero ─────────────────────────────────────────────────── */
 
 .hero {
