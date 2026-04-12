@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Support — Revival: The Great Commission</title>
+  <meta name="description" content="Get in touch with the Revival team for order questions, product support, or partnership inquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: var(--green-dark);
+    }
+
+    .contact-hero .section-eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .contact-hero .section-title {
+      margin-bottom: 16px;
+    }
+
+    .contact-hero__sub {
+      color: var(--cream-dim);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .contact-body {
+      padding: 0 24px 100px;
+      background: var(--green-dark);
+    }
+
+    .contact-layout {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ---- Info sidebar ---- */
+    .contact-info {
+      background: var(--green-card);
+      border: 1px solid var(--green-light);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+    }
+
+    .contact-info__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .contact-info__item {
+      margin-bottom: 20px;
+    }
+
+    .contact-info__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cream-dim);
+      margin-bottom: 4px;
+    }
+
+    .contact-info__value {
+      color: var(--cream);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .contact-info__divider {
+      border: none;
+      border-top: 1px solid var(--green-light);
+      margin: 24px 0;
+    }
+
+    .contact-info__note {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      line-height: 1.6;
+    }
+
+    /* ---- Form area ---- */
+    .contact-form-wrap {
+      background: var(--green-card);
+      border: 1px solid var(--green-light);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+    }
+
+    .contact-form-wrap__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrap__sub {
+      font-size: 0.875rem;
+      color: var(--cream-dim);
+      margin-bottom: 24px;
+    }
+
+    /* ---- Google Form iframe ---- */
+    .google-form-iframe {
+      width: 100%;
+      min-height: 680px;
+      border: none;
+      border-radius: 4px;
+      background: transparent;
+    }
+
+    /* Placeholder shown before form URL is set */
+    .form-placeholder {
+      background: var(--green-mid);
+      border: 2px dashed var(--green-light);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      color: var(--cream-dim);
+    }
+
+    .form-placeholder__icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .form-placeholder__title {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .form-placeholder__steps {
+      text-align: left;
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.875rem;
+      line-height: 1.8;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 700px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero {
+        padding: 120px 24px 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-revival">Revival</span>
+        <span class="nav__logo-sub">The Great Commission</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#our-story">Our Story</a></li>
+        <li><a href="/#how-to-play">How to Play</a></li>
+        <li><a href="/#whats-in-box">What's Inside</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/rulebook.html">Rule Book</a></li>
+        <li><a href="/partnerships.html">Partnerships</a></li>
+        <li><a href="/contact.html" style="color: var(--gold);">Contact</a></li>
+        <li><a href="/#buy" class="nav__cta">Join the Launch</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="/#about" class="nav__mobile-link">About</a>
+      <a href="/#our-story" class="nav__mobile-link">Our Story</a>
+      <a href="/#how-to-play" class="nav__mobile-link">How to Play</a>
+      <a href="/#whats-in-box" class="nav__mobile-link">What's Inside</a>
+      <a href="/gallery.html" class="nav__mobile-link">Gallery</a>
+      <a href="/rulebook.html" class="nav__mobile-link">Rule Book</a>
+      <a href="/partnerships.html" class="nav__mobile-link">Partnerships</a>
+      <a href="/contact.html" class="nav__mobile-link" style="color: var(--gold);">Contact</a>
+      <a href="/#buy" class="nav__mobile-link nav__mobile-cta">Join the Launch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <p class="section-eyebrow">We'd Love to Hear from You</p>
+    <h1 class="section-title">Contact &amp; Support</h1>
+    <p class="contact-hero__sub">Have a question about your order, the game, or partnering with us? Send us a message and we'll get back to you within 1–2 business days.</p>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <section class="contact-body">
+    <div class="contact-layout">
+
+      <!-- Sidebar info -->
+      <aside class="contact-info">
+        <p class="contact-info__title">Get in Touch</p>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Location</p>
+          <p class="contact-info__value">Medicine Hat, Alberta, Canada</p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Response Time</p>
+          <p class="contact-info__value">1–2 business days</p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Instagram</p>
+          <p class="contact-info__value">
+            <a href="https://instagram.com/revival.thegame" target="_blank" rel="noopener" style="color: var(--gold);">@revival.thegame</a>
+          </p>
+        </div>
+
+        <hr class="contact-info__divider" />
+
+        <p class="contact-info__label" style="margin-bottom: 10px;">Common Questions</p>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Orders &amp; Shipping</p>
+          <p class="contact-info__value contact-info__note">Questions about your order, shipping status, or returns — use the form and select "Order Question."</p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Partnerships &amp; Bulk Orders</p>
+          <p class="contact-info__value contact-info__note">Churches, ministries, and retailers — we'd love to connect. Visit our <a href="/partnerships.html" style="color: var(--gold);">Partnerships page</a> or use the form.</p>
+        </div>
+      </aside>
+
+      <!-- Form area -->
+      <div class="contact-form-wrap">
+        <p class="contact-form-wrap__title">Send Us a Message</p>
+        <p class="contact-form-wrap__sub">Fill out the form below and we'll be in touch.</p>
+
+        <!--
+          STEP: Replace the src URL below with your Google Form embed URL.
+
+          How to get it:
+          1. Open your Google Form at forms.google.com
+          2. Click Send → Embed tab (< > icon)
+          3. Copy the URL from the src="..." attribute
+          4. Paste it below, replacing PASTE_YOUR_GOOGLE_FORM_EMBED_URL_HERE
+
+          The URL looks like:
+          https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true
+        -->
+        <iframe
+          class="google-form-iframe"
+          src="PASTE_YOUR_GOOGLE_FORM_EMBED_URL_HERE"
+          title="Revival Customer Support Form"
+          loading="lazy"
+        >Loading form…</iframe>
+
+        <!--
+          TEMPORARY: Remove this placeholder block once you've set the iframe src above.
+        -->
+        <noscript>
+          <p style="color: var(--cream-dim); font-size: 0.875rem; margin-top: 12px;">
+            If the form doesn't load, please enable JavaScript or <a href="https://instagram.com/revival.thegame" target="_blank" rel="noopener" style="color: var(--gold);">reach us on Instagram</a>.
+          </p>
+        </noscript>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="footer__logo">Revival</p>
+          <p class="footer__tagline">Guess the Word. Complete the Mission.</p>
+          <p class="footer__origin">Created in Medicine Hat, Alberta 🇨🇦</p>
+        </div>
+        <div class="footer__links">
+          <a href="/#about">About</a>
+          <a href="/#how-to-play">How to Play</a>
+          <a href="/#whats-in-box">What's Inside</a>
+          <a href="/rulebook.html">Rule Book</a>
+          <a href="/partnerships.html">Partnerships</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/#buy">Shop</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://instagram.com/revival.thegame" target="_blank" rel="noopener" class="footer__social-link">
+            Instagram @revival.thegame
+          </a>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2026 Revival: The Great Commission. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
