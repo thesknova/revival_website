@@ -380,6 +380,10 @@ a {
   max-width: 560px;
   position: relative;
   z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero__eyebrow {
@@ -439,11 +443,19 @@ a {
 .hero__box-wrap {
   flex: 0 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 24px;
   padding-left: 48px;
   position: relative;
   z-index: 1;
+}
+
+.hero__logo-img {
+  width: clamp(180px, 28vw, 300px);
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 .hero__box {
