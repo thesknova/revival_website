@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="hero__box-wrap">
-      <img src="Images/IMG_20260406_132951.jpg" alt="Revival: The Great Commission game box" class="hero__box" />
+      <canvas id="box3d" aria-label="Revival: The Great Commission — 3D box render"></canvas>
     </div>
   </section>
 
@@ -435,5 +435,102 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Three.js 3D Box -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.min.js"></script>
+  <script>
+  (function () {
+    var canvas = document.getElementById('box3d');
+    if (!canvas) return;
+
+    function getSize() {
+      var rect = canvas.getBoundingClientRect();
+      return { w: rect.width || 420, h: rect.height || 500 };
+    }
+
+    var sz = getSize();
+
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(sz.w, sz.h, false);
+
+    var scene = new THREE.Scene();
+
+    var camera = new THREE.PerspectiveCamera(36, sz.w / sz.h, 0.1, 100);
+    camera.position.set(0.6, 2.4, 9.5);
+    camera.lookAt(0, 0.2, 0);
+
+    // Lighting
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+
+    var keyLight = new THREE.DirectionalLight(0xfff8e7, 1.5);
+    keyLight.position.set(5, 7, 8);
+    scene.add(keyLight);
+
+    var fillLight = new THREE.DirectionalLight(0xc9a84c, 0.5);
+    fillLight.position.set(-6, 2, 4);
+    scene.add(fillLight);
+
+    var rimLight = new THREE.DirectionalLight(0xffffff, 0.25);
+    rimLight.position.set(0, -5, -6);
+    scene.add(rimLight);
+
+    // Box geometry — 7 x 7 x 2 inch ratio → 3.5 x 3.5 x 1 units
+    var geo = new THREE.BoxGeometry(3.5, 3.5, 1);
+
+    var darkGreen = new THREE.MeshStandardMaterial({ color: 0x0b2417, roughness: 0.85, metalness: 0.05 });
+
+    var loader = new THREE.TextureLoader();
+
+    var faceMat = new THREE.MeshStandardMaterial({ roughness: 0.55, metalness: 0.05 });
+    var topMat  = new THREE.MeshStandardMaterial({ roughness: 0.55, metalness: 0.05 });
+
+    // Material array order for BoxGeometry: +x, -x, +y, -y, +z, -z
+    var box = new THREE.Mesh(geo, [
+      darkGreen,  // right  (+x)
+      darkGreen,  // left   (-x)
+      topMat,     // top    (+y) — box-side texture (7×2 matches top face ratio)
+      darkGreen,  // bottom (-y)
+      faceMat,    // front  (+z) — main box artwork
+      darkGreen,  // back   (-z)
+    ]);
+
+    box.rotation.x = -0.18;
+    box.rotation.y = 0.45;
+    scene.add(box);
+
+    // Load textures after mesh is added so box renders immediately in green, then textures pop in
+    loader.load('/Images/box-face.png', function (tex) {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      faceMat.map = tex;
+      faceMat.needsUpdate = true;
+    });
+    loader.load('/Images/box-side.png', function (tex) {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      topMat.map = tex;
+      topMat.needsUpdate = true;
+    });
+
+    // Gentle oscillating rotation
+    var t = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      t += 0.006;
+      box.rotation.y = 0.45 + Math.sin(t) * 0.28;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Responsive resize
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () {
+        var s = getSize();
+        renderer.setSize(s.w, s.h, false);
+        camera.aspect = s.w / s.h;
+        camera.updateProjectionMatrix();
+      }).observe(canvas);
+    }
+  })();
+  </script>
 </body>
 </html>

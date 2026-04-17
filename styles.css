@@ -456,19 +456,11 @@ a {
   object-fit: contain;
 }
 
-.hero__box {
-  width: clamp(260px, 35vw, 420px);
-  border-radius: 12px;
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.6),
-    0 0 0 1px rgba(201, 168, 76, 0.15),
-    0 0 60px rgba(201, 168, 76, 0.08);
-  transform: perspective(800px) rotateY(-6deg) rotateX(2deg);
-  transition: transform 0.4s ease;
-}
-
-.hero__box:hover {
-  transform: perspective(800px) rotateY(-2deg) rotateX(1deg) translateY(-4px);
+#box3d {
+  width: clamp(280px, 38vw, 460px);
+  height: clamp(320px, 44vw, 540px);
+  display: block;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(201,168,76,0.12));
 }
 
 /* ── About ───────────────────────────────────────────────── */
@@ -1319,8 +1311,9 @@ a {
     padding-left: 0;
   }
 
-  .hero__box {
-    transform: none;
+  #box3d {
+    width: clamp(240px, 80vw, 380px);
+    height: clamp(280px, 92vw, 440px);
   }
 
   .about__grid {
@@ -1387,7 +1380,8 @@ a {
     display: none;
   }
 
-  .hero__box {
+  #box3d {
     width: 240px;
+    height: 280px;
   }
 }
