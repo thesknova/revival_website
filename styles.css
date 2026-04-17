@@ -456,11 +456,91 @@ a {
   object-fit: contain;
 }
 
-#box3d {
-  width: clamp(280px, 38vw, 460px);
-  height: clamp(320px, 44vw, 540px);
-  display: block;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(201,168,76,0.12));
+/* ── CSS 3D Box ─────────────────────────────────────────── */
+
+.box-3d-scene {
+  perspective: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(300px, 40vw, 440px);
+  height: clamp(360px, 50vw, 520px);
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.75)) drop-shadow(0 0 40px rgba(201,168,76,0.12));
+}
+
+.box-3d {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(30deg);
+  animation: box-sway 7s ease-in-out infinite alternate;
+}
+
+@keyframes box-sway {
+  0%   { transform: rotateX(-20deg) rotateY(15deg); }
+  100% { transform: rotateX(-20deg) rotateY(50deg); }
+}
+
+.box-face {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Front: 280×280, push forward D/2=40px */
+.box-front {
+  width: 280px; height: 280px;
+  top: 0; left: 0;
+  transform: translateZ(40px);
+  background-image: url('/Images/box-face.png');
+}
+.box-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 45%, rgba(0,0,0,0.12) 100%);
+  pointer-events: none;
+}
+
+/* Back */
+.box-back {
+  width: 280px; height: 280px;
+  top: 0; left: 0;
+  transform: rotateY(180deg) translateZ(40px);
+  background-color: #0b2417;
+}
+
+/* Right side: 80×280, centered at left:(280-80)/2=100 */
+.box-right {
+  width: 80px; height: 280px;
+  top: 0; left: 100px;
+  transform: rotateY(90deg) translateZ(140px);
+  background: linear-gradient(to bottom, #0d2c1b, #0a2015);
+}
+
+/* Left side */
+.box-left {
+  width: 80px; height: 280px;
+  top: 0; left: 100px;
+  transform: rotateY(-90deg) translateZ(140px);
+  background: linear-gradient(to bottom, #0d2c1b, #0a2015);
+}
+
+/* Top: 280×80, centered at top:(280-80)/2=100 — box side artwork */
+.box-top {
+  width: 280px; height: 80px;
+  top: 100px; left: 0;
+  transform: rotateX(90deg) translateZ(140px);
+  background-image: url('/Images/box-side.png');
+}
+
+/* Bottom */
+.box-bottom {
+  width: 280px; height: 80px;
+  top: 100px; left: 0;
+  transform: rotateX(-90deg) translateZ(140px);
+  background-color: #0b2417;
 }
 
 /* ── About ───────────────────────────────────────────────── */
@@ -1311,8 +1391,8 @@ a {
     padding-left: 0;
   }
 
-  #box3d {
-    width: clamp(240px, 80vw, 380px);
+  .box-3d-scene {
+    width: clamp(240px, 80vw, 360px);
     height: clamp(280px, 92vw, 440px);
   }
 
@@ -1380,8 +1460,8 @@ a {
     display: none;
   }
 
-  #box3d {
+  .box-3d-scene {
     width: 240px;
-    height: 280px;
+    height: 300px;
   }
 }
