@@ -349,12 +349,14 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 64px;
   position: relative;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 70% 50%, rgba(42, 90, 58, 0.25) 0%, transparent 60%),
     linear-gradient(160deg, #0b2417 0%, #132e1e 50%, #0b2417 100%);
-  padding: 120px 24px 80px;
+  padding: 120px 48px 80px;
 }
 
 .hero::before {
@@ -375,8 +377,7 @@ a {
 }
 
 .hero__content {
-  flex: 1;
-  max-width: 560px;
+  flex: 0 1 500px;
   position: relative;
   z-index: 1;
   text-align: center;
@@ -445,8 +446,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  padding-left: 48px;
   position: relative;
   z-index: 1;
 }
