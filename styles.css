@@ -1224,6 +1224,13 @@ a {
   color: var(--cream-dim);
 }
 
+.product-card__founders-cta {
+  font-size: 0.95rem;
+  color: var(--gold);
+  font-style: italic;
+  margin-top: 12px;
+}
+
 .product-card__secure {
   font-size: 0.78rem;
   color: var(--cream-dim);
