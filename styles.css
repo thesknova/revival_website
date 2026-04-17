@@ -157,22 +157,14 @@ a {
 
 .nav__logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 }
 
-.nav__logo-revival {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-.nav__logo-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cream-dim);
+.nav__logo-img {
+  height: 52px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
 }
 
 .nav__links {
@@ -554,10 +546,28 @@ a {
   background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
 }
 
+.our-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.our-story__image-wrap {
+  position: sticky;
+  top: 100px;
+}
+
+.our-story__image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border: 1px solid var(--green-light);
+}
+
 .our-story__inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .our-story__body {
@@ -631,6 +641,30 @@ a {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-dim);
+}
+
+/* ── Mid-page CTA ────────────────────────────────────────── */
+
+.mid-cta {
+  background: var(--green-card);
+  border-top: 1px solid var(--green-light);
+  border-bottom: 1px solid var(--green-light);
+  padding: 32px 24px;
+}
+
+.mid-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.mid-cta__text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--cream);
 }
 
 /* ── How to Play ─────────────────────────────────────────── */
@@ -858,6 +892,11 @@ a {
   color: var(--gold);
   margin-bottom: 16px;
   display: block;
+}
+
+.how-to-play__cta {
+  text-align: center;
+  margin-top: 56px;
 }
 
 /* ── Testimonials ────────────────────────────────────────── */
@@ -1199,11 +1238,12 @@ a {
   margin-bottom: 40px;
 }
 
-.footer__logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: var(--gold);
-  margin-bottom: 8px;
+.footer__logo-img {
+  height: 64px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
 .footer__tagline {
@@ -1300,6 +1340,24 @@ a {
   .footer__inner {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .our-story__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .our-story__image-wrap {
+    position: static;
+    order: -1;
+  }
+
+  .our-story__image {
+    aspect-ratio: 16/9;
+  }
+
+  .mid-cta__inner {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
