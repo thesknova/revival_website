@@ -149,7 +149,7 @@ a {
 .nav__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,7 +161,7 @@ a {
 }
 
 .nav__logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
   object-fit: contain;
 }
