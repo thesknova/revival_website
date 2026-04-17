@@ -455,6 +455,13 @@ a {
   object-fit: contain;
 }
 
+.hero__logo-lockup {
+  width: 100%;
+  max-width: 460px;
+  object-fit: contain;
+  margin: 8px 0;
+}
+
 /* ── CSS 3D Box ─────────────────────────────────────────── */
 
 .box-3d-scene {
