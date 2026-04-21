@@ -1392,6 +1392,163 @@ a {
   padding-top: 24px;
 }
 
+/* ── Hero headline ──────────────────────────────────────── */
+
+.hero__headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 6px 0 10px;
+}
+
+/* ── About steps list ────────────────────────────────────── */
+
+.about__steps {
+  list-style: none;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about__steps li {
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.about__steps li::before {
+  content: '✦';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  margin-top: 4px;
+}
+
+.about__closing {
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* ── Product card urgency line ───────────────────────────── */
+
+.product-card__urgency {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: -4px 0 16px;
+}
+
+/* ── Testimonials played-by tags ─────────────────────────── */
+
+.testimonials-played-by {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 40px;
+}
+
+.testimonials-played-by__tag {
+  background: var(--green-card);
+  border: 1px solid var(--green-light);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+}
+
+/* ── Why Different section ───────────────────────────────── */
+
+.why-different {
+  padding: 100px 24px;
+  background: var(--green-mid);
+  text-align: center;
+}
+
+.why-different__sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--gold);
+  margin: 4px 0 56px;
+}
+
+.why-different__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.why-different__col-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-dim);
+  margin-bottom: 16px;
+}
+
+.why-different__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.why-different__list li {
+  color: var(--cream);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.why-different__list li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* ── Final CTA section ───────────────────────────────────── */
+
+.final-cta {
+  padding: 100px 24px;
+  background: var(--green-dark);
+  text-align: center;
+  border-top: 1px solid var(--green-light);
+}
+
+.final-cta__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.final-cta__sub {
+  color: var(--cream-dim);
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .why-different__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width: 900px) {
