@@ -65,35 +65,9 @@ if (dropdownToggle && dropdownMenu) {
   });
 }
 
-// ── Stripe Checkout ─────────────────────────────────────────
-const checkoutBtn = document.getElementById('checkoutBtn');
-
-checkoutBtn.addEventListener('click', async () => {
-  checkoutBtn.disabled = true;
-  checkoutBtn.textContent = 'Redirecting to checkout…';
-
-  try {
-    const response = await fetch('/api/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ quantity: 1 }),
-    });
-
-    if (!response.ok) {
-      const err = await response.json().catch(() => ({}));
-      throw new Error(err.error || 'Something went wrong. Please try again.');
-    }
-
-    const { url } = await response.json();
-    window.location.href = url;
-
-  } catch (err) {
-    console.error('Checkout error:', err);
-    checkoutBtn.disabled = false;
-    checkoutBtn.textContent = 'Order Now — Secure Checkout';
-    alert(err.message || 'Unable to start checkout. Please try again.');
-  }
-});
+// ── Stripe Payment Link ──────────────────────────────────────
+// Checkout button is an <a> tag linking directly to the Stripe Payment Link.
+// No backend required.
 
 // ── Smooth scroll for in-page anchors ───────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
