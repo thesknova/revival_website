@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
 
@@ -216,9 +217,12 @@
           </div>
           <p class="product-card__urgency">Once it's gone, it's gone.</p>
           <p class="product-card__founders-cta">Be part of the very first Revival tables</p>
-          <a href="https://buy.stripe.com/7sY28r6nK6FcdRUge8gfu00" target="_blank" rel="noopener" class="btn btn--gold btn--full">
-            Reserve Your Copy
-          </a>
+          <div class="stripe-btn-wrap">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TPmQmIphT0NTLaQ61mFwOor"
+              publishable-key="pk_live_51TPk5eIphT0NTLaQ1fnhfrux0Ev71qjNQABCy9A4JasdD9cYHfWY3xiNKwJBql4NHinnx33gbNOqIO6IesuJztNG00HfKpNW3G"
+            ></stripe-buy-button>
+          </div>
           <p class="product-card__secure">
             🔒 Secured by Stripe &nbsp;·&nbsp; Ships across Canada &amp; USA
           </p>
