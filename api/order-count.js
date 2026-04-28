@@ -9,7 +9,7 @@
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const GOAL = 135;
+const GOAL = 500;
 const BASE_COUNT = 5; // orders placed before the tracker was added
 
 module.exports = async function handler(req, res) {
