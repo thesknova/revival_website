@@ -1336,6 +1336,67 @@ a {
   text-align: center;
 }
 
+/* ── Pre-order Goal Tracker ──────────────────────────────── */
+
+.preorder-tracker {
+  background: var(--green-dark);
+  border: 1px solid var(--green-light);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.preorder-tracker__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.preorder-tracker__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cream-dim);
+}
+
+.preorder-tracker__tally {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.preorder-tracker__bar-wrap {
+  background: var(--green-light);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.preorder-tracker__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold-light));
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+.preorder-tracker__status {
+  font-size: 0.82rem;
+  color: var(--cream-dim);
+  text-align: center;
+  margin: 0;
+}
+
+.preorder-tracker__status--reached {
+  color: var(--gold);
+  font-weight: 700;
+}
+
 /* ── Partner Banner (homepage) ───────────────────────────── */
 
 .partner-banner {

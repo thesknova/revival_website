@@ -81,6 +81,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ── Pre-order goal tracker ───────────────────────────────────
+(async function loadOrderTracker() {
+  const countEl    = document.getElementById('trackerCount');
+  const barEl      = document.getElementById('trackerBar');
+  const statusEl   = document.getElementById('trackerStatus');
+  const progressEl = document.getElementById('trackerProgress');
+  if (!countEl) return;
+
+  try {
+    const res  = await fetch('/api/order-count');
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    countEl.textContent = data.count;
+    progressEl.setAttribute('aria-valuenow', data.count);
+
+    // Slight delay so the CSS transition is visible on load
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        barEl.style.width = data.percent + '%';
+      });
+    });
+
+    if (data.remaining === 0) {
+      statusEl.textContent = 'Goal reached! Manufacturing has begun.';
+      statusEl.classList.add('preorder-tracker__status--reached');
+    } else {
+      const unit = data.remaining === 1 ? 'unit' : 'units';
+      statusEl.textContent = `${data.remaining} more ${unit} until manufacturing begins`;
+    }
+  } catch {
+    statusEl.textContent = 'Order count temporarily unavailable';
+  }
+})();
+
 // ── Simple scroll-reveal animation ──────────────────────────
 const revealEls = document.querySelectorAll(
   '.step, .content-card, .testimonial, .about__text, .about__image-wrap'
