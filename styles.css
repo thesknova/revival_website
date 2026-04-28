@@ -549,6 +549,95 @@ a {
   background-color: #0b2417;
 }
 
+/* ── Preorder Notice ─────────────────────────────────────── */
+
+.preorder-notice {
+  background: var(--green-card);
+  border-top: 3px solid var(--gold);
+  border-bottom: 1px solid var(--green-light);
+  padding: 56px 24px;
+}
+
+.preorder-notice__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.preorder-notice__badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.preorder-notice__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.preorder-notice__body {
+  color: var(--cream-dim);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.preorder-notice__what-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-dim);
+  margin-bottom: 12px;
+}
+
+.preorder-notice__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.preorder-notice__list li {
+  color: var(--cream);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.preorder-notice__list li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.preorder-notice__foot {
+  color: var(--cream-dim);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.preorder-notice__thanks {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 28px;
+  font-size: 1rem;
+}
+
 /* ── About ───────────────────────────────────────────────── */
 
 .about {
