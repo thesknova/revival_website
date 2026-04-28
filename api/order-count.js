@@ -7,8 +7,6 @@
 //  Required env var: STRIPE_SECRET_KEY
 // ============================================================
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 const GOAL = 500;
 const BASE_COUNT = 5; // orders placed before the tracker was added
 
@@ -17,6 +15,12 @@ module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=120');
 
   try {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error('order-count: STRIPE_SECRET_KEY is not set');
+      return res.status(500).json({ error: 'Server misconfiguration.' });
+    }
+
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
     let stripeCount = 0;
     let hasMore = true;
     let startingAfter;

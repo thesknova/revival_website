@@ -4,6 +4,10 @@
     "api/checkout.js": {
       "memory": 128,
       "maxDuration": 10
+    },
+    "api/order-count.js": {
+      "memory": 128,
+      "maxDuration": 10
     }
   },
   "routes": [
